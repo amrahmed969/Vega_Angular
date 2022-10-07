@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="#" style="margin-right:900px ;">Vega</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+       
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Category
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Home</a>
+            <a class="dropdown-item" href="#" [routerLink]="['/vehicles']" routerLinkActive="router-link-active"  >Vehicles</a>
+            <a class="dropdown-item" href="#" [routerLink]="['/vehicles/new']" routerLinkActive="router-link-active"  >New Vehicle</a>
+            <a class="dropdown-item" href="#" [routerLink]="['/counter']" routerLinkActive="router-link-active"  >Counter</a>
+            <a class="dropdown-item" href="#" [routerLink]="['/fetch-data']" routerLinkActive="router-link-active" >Fetch data</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>

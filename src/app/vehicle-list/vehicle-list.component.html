@@ -1,0 +1,39 @@
+ <a class="btn btn-primary" href="#" [routerLink]="['/vehicles/new']" routerLinkActive="router-link-active"  >New Vehicle</a>
+
+<div class="well bg-light">
+    <div class="form-group">
+        <label for="make">Make</label>
+        <select name="" id="make" class="form-control" [(ngModel)]="query.makeId" (change)="onFilterChange()">
+            <option value=""></option>
+            <option *ngFor="let m of makes"  value="{{m.id}}">{{m.name}}</option>      
+        </select>
+    </div>
+    <button class="btn btn-secondary" (click)="resetFilter()">Reset</button>
+</div>
+ 
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th >Id</th>  
+        <th (click)="sortBy('make')">Make</th>
+        <th (click)="sortBy('model')">Model</th>
+        <th (click)="sortBy('contactName')">Contact Name</th>
+        <th ></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of vehicles " >
+        <th scope="row">{{v.id}}</th>
+        <td>{{v.make.name}}</td>
+        <td>{{v.model.name}}</td>
+        <td>{{v.contact.name}}</td>
+        <td><a class="btn btn-primary" href="#" [routerLink]="['/vehicles/', v.id]" routerLinkActive="router-link-active">View</a></td>
+      </tr >
+      
+    </tbody>
+  </table>
+  <app-pagination-component [total-items]="20" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></app-pagination-component>
+ <!-- <pagination [total-items]="10" [page-size]="query.pageSize" (page-changed)="onPageChange($evevt)"></pagination> -->
+  
+
+ 
